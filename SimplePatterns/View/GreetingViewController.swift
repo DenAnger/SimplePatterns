@@ -11,21 +11,21 @@ class GreetingViewController: UIViewController {
 
     @IBOutlet var greetingLabel: UILabel!
     
-    private var presenter: GreetingViewPresenterProtocol!
+    private var viewModel: GreetingViewModelProtocol! {
+        didSet {
+            viewModel.greetingDidChange = { [unowned self] viewModel in
+                self.greetingLabel.text = viewModel.greeting
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let person = Person(name: "John", surname: "Doe")
-        presenter = GreetingPresenter(view: self, person: person)
+        viewModel = GreetingViewModel(person: person)
     }
     
     @IBAction func showGreetingPressed(_ sender: Any) {
-        presenter.showGreeting()
-    }
-}
-
-extension GreetingViewController: GreetingViewProtocol {
-    func setGreeting(_ greeting: String) {
-        greetingLabel.text = greeting
+        viewModel.showGreeting()
     }
 }

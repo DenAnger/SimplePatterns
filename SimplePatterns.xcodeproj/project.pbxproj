@@ -14,7 +14,7 @@
 		69CB2CF92536CADD00EA4A89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69CB2CF82536CADD00EA4A89 /* Assets.xcassets */; };
 		69CB2CFC2536CADD00EA4A89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69CB2CFA2536CADD00EA4A89 /* LaunchScreen.storyboard */; };
 		69CB2D122536CF5700EA4A89 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB2D112536CF5700EA4A89 /* Person.swift */; };
-		69CB2D192536D0D400EA4A89 /* GreetingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB2D182536D0D400EA4A89 /* GreetingPresenter.swift */; };
+		69CB2D192536D0D400EA4A89 /* GreetingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB2D182536D0D400EA4A89 /* GreetingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		69CB2CFB2536CADD00EA4A89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		69CB2CFD2536CADD00EA4A89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69CB2D112536CF5700EA4A89 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		69CB2D182536D0D400EA4A89 /* GreetingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingPresenter.swift; sourceTree = "<group>"; };
+		69CB2D182536D0D400EA4A89 /* GreetingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			children = (
 				69CB2D102536CF1600EA4A89 /* Model */,
 				69CB2D142536CF5B00EA4A89 /* View */,
-				69CB2D172536D0A700EA4A89 /* Presenter */,
+				69CB2D172536D0A700EA4A89 /* ViewModel */,
 				69CB2D082536CBAA00EA4A89 /* Storyboards */,
 				69CB2D092536CBBB00EA4A89 /* Resources */,
 				69CB2D052536CB1B00EA4A89 /* Supports */,
@@ -113,12 +113,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		69CB2D172536D0A700EA4A89 /* Presenter */ = {
+		69CB2D172536D0A700EA4A89 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				69CB2D182536D0D400EA4A89 /* GreetingPresenter.swift */,
+				69CB2D182536D0D400EA4A89 /* GreetingViewModel.swift */,
 			);
-			path = Presenter;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69CB2CF42536CAD900EA4A89 /* GreetingViewController.swift in Sources */,
-				69CB2D192536D0D400EA4A89 /* GreetingPresenter.swift in Sources */,
+				69CB2D192536D0D400EA4A89 /* GreetingViewModel.swift in Sources */,
 				69CB2CF02536CAD900EA4A89 /* AppDelegate.swift in Sources */,
 				69CB2D122536CF5700EA4A89 /* Person.swift in Sources */,
 				69CB2CF22536CAD900EA4A89 /* SceneDelegate.swift in Sources */,
