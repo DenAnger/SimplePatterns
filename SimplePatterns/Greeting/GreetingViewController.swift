@@ -7,31 +7,27 @@
 
 import UIKit
 
-protocol GreetingViewProtocol: class {
-    func setGreeting(greeting: String)
+protocol GreetingDisplayLogic: class {
+    func displayGreeting(viewModel: Greeting.ShowGreeting.ViewModel)
 }
 
-class GreetingViewController: UIViewController {
+class GreetingViewController: UIViewController, GreetingDisplayLogic {
 
     @IBOutlet var greetingLabel: UILabel!
     
-    var presenter: GreetingPresenterProtocol!
-    
-    private let configurator: GreetingCongiguratorProtocol = GreetingConfigurator()
-    private var person: Person!
+    var interactor: GreetingBusinessLogic?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurator.configure(with: self)
+        GreetingConfigurator.shared.configure(with: self)
     }
     
     @IBAction func showGreetingPressed(_ sender: Any) {
-        presenter.didTapShowGreetingButton()
+        let request = Greeting.ShowGreeting.Request()
+        interactor?.setFullName(request: request)
     }
-}
-
-extension GreetingViewController: GreetingViewProtocol {
-    func setGreeting(greeting: String) {
-        greetingLabel.text = greeting
+    
+    func displayGreeting(viewModel: Greeting.ShowGreeting.ViewModel) {
+        greetingLabel.text = viewModel.greeting
     }
 }

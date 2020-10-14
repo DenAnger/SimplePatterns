@@ -7,26 +7,23 @@
 
 import Foundation
 
-protocol GreetingInteractorProtocol: class {
-    func provideGreetingData()
+protocol GreetingBusinessLogic {
+    func setFullName(request: Greeting.ShowGreeting.Request)
 }
 
-protocol GreetingInteractorOutputProtocol: class {
-    func receiveGreetingData(greetingData: GreetingData)
+protocol GreetingDataStore {
+    var fullName: String { get }
 }
 
-class GreetingInteractor: GreetingInteractorProtocol {
+class GreetingInteractor: GreetingBusinessLogic, GreetingDataStore {
     
-    weak var presenter: GreetingInteractorOutputProtocol!
+    var presenter: GreetingPresentationLogic?
+    var fullName: String = ""
     
-    required init(presenter: GreetingInteractorOutputProtocol) {
-        self.presenter = presenter
-    }
-    
-    func provideGreetingData() {
+    func setFullName(request: Greeting.ShowGreeting.Request) {
         let person = Person(name: "John", surname: "Doe")
-        let subject = "\(person.name) \(person.surname)"
-        let greetingData = GreetingData(greeting: "Hello", subject: subject)
-        presenter.receiveGreetingData(greetingData: greetingData)
+        fullName = "\(person.name) \(person.surname)"
+        let response = Greeting.ShowGreeting.Response(fullName: fullName)
+        presenter?.presentGreeting(response: response)
     }
 }

@@ -7,32 +7,17 @@
 
 import Foundation
 
-struct GreetingData {
-    let greeting: String
-    let subject: String
+protocol GreetingPresentationLogic {
+    func presentGreeting(response: Greeting.ShowGreeting.Response)
 }
 
-protocol GreetingPresenterProtocol: class {
-    func didTapShowGreetingButton()
-}
+class GreetingPresenter: GreetingPresentationLogic {
+    
+    weak var viewController: GreetingDisplayLogic?
 
-class GreetingPresenter: GreetingPresenterProtocol {
-    
-    weak var view: GreetingViewProtocol!
-    var interactor: GreetingInteractorProtocol!
-    
-    required init(view: GreetingViewProtocol) {
-        self.view = view
-    }
-    
-    func didTapShowGreetingButton() {
-        interactor.provideGreetingData()
-    }
-}
-
-extension GreetingPresenter: GreetingInteractorOutputProtocol {
-    func receiveGreetingData(greetingData: GreetingData) {
-        let greeting = "\(greetingData.greeting), \(greetingData.subject)!"
-        view.setGreeting(greeting: greeting)
+    func presentGreeting(response: Greeting.ShowGreeting.Response) {
+        let greeting = "Hello, \(response.fullName)!"
+        let viewModel = Greeting.ShowGreeting.ViewModel(greeting: greeting)
+        viewController?.displayGreeting(viewModel: viewModel)
     }
 }

@@ -17,6 +17,7 @@
 		69CB2D192536D0D400EA4A89 /* GreetingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB2D182536D0D400EA4A89 /* GreetingPresenter.swift */; };
 		69CB2D212536D8FF00EA4A89 /* GreetingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB2D202536D8FF00EA4A89 /* GreetingInteractor.swift */; };
 		69CB2D242536D94700EA4A89 /* GreetingConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB2D232536D94700EA4A89 /* GreetingConfigurator.swift */; };
+		69CB2D272536E1B200EA4A89 /* GreetingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB2D262536E1B200EA4A89 /* GreetingModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		69CB2D182536D0D400EA4A89 /* GreetingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingPresenter.swift; sourceTree = "<group>"; };
 		69CB2D202536D8FF00EA4A89 /* GreetingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingInteractor.swift; sourceTree = "<group>"; };
 		69CB2D232536D94700EA4A89 /* GreetingConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingConfigurator.swift; sourceTree = "<group>"; };
+		69CB2D262536E1B200EA4A89 /* GreetingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				69CB2CF32536CAD900EA4A89 /* GreetingViewController.swift */,
-				69CB2D182536D0D400EA4A89 /* GreetingPresenter.swift */,
 				69CB2D202536D8FF00EA4A89 /* GreetingInteractor.swift */,
+				69CB2D182536D0D400EA4A89 /* GreetingPresenter.swift */,
+				69CB2D262536E1B200EA4A89 /* GreetingModels.swift */,
 				69CB2D232536D94700EA4A89 /* GreetingConfigurator.swift */,
 			);
 			path = Greeting;
@@ -189,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69CB2D272536E1B200EA4A89 /* GreetingModels.swift in Sources */,
 				69CB2CF42536CAD900EA4A89 /* GreetingViewController.swift in Sources */,
 				69CB2D212536D8FF00EA4A89 /* GreetingInteractor.swift in Sources */,
 				69CB2D242536D94700EA4A89 /* GreetingConfigurator.swift in Sources */,
